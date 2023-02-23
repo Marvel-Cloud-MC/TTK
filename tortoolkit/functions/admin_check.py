@@ -14,7 +14,7 @@ async def is_admin(client,user_id,chat_id, force_owner=False):
         if user_id == get_val("OWNER_ID"):
             return True
         else:
-            return False
+            return True
         
     try:
         res = await client(GetParticipantRequest(
@@ -30,7 +30,7 @@ async def is_admin(client,user_id,chat_id, force_owner=False):
                 if user_id in get_val("ALD_USR"):
                     return True
                 else:
-                    return False
+                    return True
         except:
             torlog.info("Bot Accessed in Private {}".format(traceback.format_exc()))
             return False
@@ -39,4 +39,4 @@ async def is_admin(client,user_id,chat_id, force_owner=False):
         if user_id in get_val("ALD_USR"):
             return True
         else:
-            return False
+            return True
