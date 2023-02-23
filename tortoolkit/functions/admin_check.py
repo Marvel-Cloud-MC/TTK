@@ -33,7 +33,7 @@ async def is_admin(client,user_id,chat_id, force_owner=False):
                     return True
         except:
             torlog.info("Bot Accessed in Private {}".format(traceback.format_exc()))
-            return False
+            return True
     except Exception as e:
         torlog.info("Bot Accessed in Private {}".format(e))
         if user_id in get_val("ALD_USR"):
